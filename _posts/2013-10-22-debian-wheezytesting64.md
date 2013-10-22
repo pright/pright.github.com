@@ -220,7 +220,7 @@ wps：http://community.wps.cn/download/
 
   * gnome-shell设置
     sudo apt-get remove gnome-shell-extensions
-    https://extensions.gnome.org搜索安装Auto Move Windows扩展、SystemMonitor扩展、Weather扩展、Alternative Status Menu扩展
+    https://extensions.gnome.org 搜索安装Auto Move Windows扩展、SystemMonitor扩展、Weather扩展、Alternative Status Menu扩展
     gnome-tweak-tool
     alt+f2，r
     Shell->Show date in clock
