@@ -1,6 +1,7 @@
 ---
 layout: page
-title: 
+title: TIMELINE
+tagline: Too Much To Do; So Little Time
 ---
 {% include JB/setup %}
 
