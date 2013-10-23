@@ -3,13 +3,16 @@ layout: post
 title: "组播设置"
 description: ""
 category: ""
-tags: []
+tags: [Network, Linux]
 ---
 {% include JB/setup %}
 
 接收组播包，需要设置默认网关（不必真实存在）或者组播路由
+
+```
 route add default gw IP
 route add -net 224.0.0.0 netmask 240.0.0.0 dev eth0
+```
 
 原因：
 在未设置本地接口情况下使用setsockopt设置IP_ADD_MEMBERSHIP，会根据组播地址去查路由表选择本地接口。如果网络没有配置网关或者组播路由，就无法找到对应的目标地址因而返回No such device的错误。
