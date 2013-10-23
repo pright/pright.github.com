@@ -327,13 +327,10 @@ wps：http://community.wps.cn/download/
     gsettings set org.gnome.desktop.default-applications.office.calendar exec "chromium 'https://www.google.com/calendar'"
     ```
 
-  * gnome-shell-google-calendar
-
-    ```
-    git clone https://github.com/vintitres/gnome-shell-google-calendar ~/github/gnome-shell-google-calendar gnome-session-properties
-    ```
-
-    命令："python /home/pright/github/gnome-shell-google-calendar/gnome-shell-google-calendar.py --account pright.xj@gmail.com"
+  * gnome-shell-google-calendar~~
+    \# gnome3.8改用oauth2,此插件已无效  
+    ~~git clone https://github.com/vintitres/gnome-shell-google-calendar ~/github/gnome-shell-google-calendar gnome-session-properties~~
+    ~~命令："python /home/pright/github/gnome-shell-google-calendar/gnome-shell-google-calendar.py --account pright.xj@gmail.com"~~
 
   * gnome-shell设置
 
