@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "archLinux安装记录"
+title: "ArchLinux安装记录"
 description: ""
 category: ""
 tags: [ArchLinux, Linux]
