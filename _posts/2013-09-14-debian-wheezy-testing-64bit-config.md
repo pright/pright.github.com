@@ -151,7 +151,7 @@ wps：http://community.wps.cn/download/
     
     ```
     adduser pright vboxusers
-    echo "none /proc/bus/usb usbfs dvgid=\`cat /etc/group | grep vboxusers | cut -d ':' -f 3\`,devmode=644 0 0" >> /etc/fstab
+    echo "none /proc/bus/usb usbfs dvgid=`cat /etc/group | grep vboxusers | cut -d ':' -f 3`,devmode=644 0 0" >> /etc/fstab
     ```
 
   * dropbox
@@ -217,6 +217,14 @@ wps：http://community.wps.cn/download/
     ln -s /usr/lib/jvm/jdk-6-oracle-x64 /usr/lib/jvm/java-6-sun
     ln -s .jdk-6-oracle-x64.jinfo .java-6-sun.jinfo
     update-java-alternatives -s java-6-sun
+    ```
+
+  * rabbitvcs-nautilus无法显示问题(Workaround)
+    https://code.google.com/p/rabbitvcs/issues/detail?id=803
+
+    ```
+    ln -sf /usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0 /usr/lib/
+    wget http://rabbitvcs.googlecode.com/svn/trunk/clients/nautilus-3.0/RabbitVCS.py /usr/share/nautilus-python/extensions
     ```
 
 #### pright用户
