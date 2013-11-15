@@ -67,7 +67,7 @@ apt-get dist-upgrade
 ### 安装软件
 
 ```
-apt-get install python-openssl python-pip python-scrapy python-flask python-m2crypto python-gdata python-iso8601 python-autopep8 ipython libnss3-tools python-vte bison apt-transport-https htop strace ltrace xtrace build-essential dkms gcc g++ make automake cmake openjdk-6-jdk subversion git git-email git-flow gitk tig ctags cscope vim vim-gnome ack-grep zsh tmux autojump tftp samba nfs-kernel-server sshfs rsync minicom rabbitvcs-nautilus chromium chromium-l10n icedove icedove-l10n-zh-cn wireshark tcpdump tcptrace tcptrack iptraf udpcast iperf mtr-tiny socat gdb meld flashplugin-nonfree icedtea-6-plugin ntpdate uboot-mkimage exaile swig tstools dvbsnoop ranger markdown mutt offlineimap msmtp libnotify-bin gcc-multilib g++-multilib gcc-4.4-multilib g++-4.4-multilib zlib1g zlib1g-dev lib32z1-dev zip gperf flex curl tofrodos lib32ncurses5-dev libglib2.0-0:i386 libpng12-0:i386 libsm6:i386 libxrender1:i386 libfontconfig1:i386 glances nautilus-actions rake ruby1.9.3 ruby-switch xclip xsel
+apt-get install python-openssl python-pip python-scrapy python-flask python-m2crypto python-gdata python-iso8601 python-autopep8 ipython libnss3-tools python-vte bison apt-transport-https htop strace ltrace xtrace build-essential libtool valgrind dkms gcc g++ make automake cmake openjdk-6-jdk subversion git git-email git-flow gitk tig ctags cscope vim vim-gnome ack-grep zsh tmux autojump tftp samba nfs-kernel-server sshfs rsync minicom rabbitvcs-nautilus chromium chromium-l10n icedove icedove-l10n-zh-cn wireshark tcpdump tcptrace tcptrack iptraf udpcast iperf mtr-tiny socat gdb meld flashplugin-nonfree icedtea-6-plugin ntpdate uboot-mkimage exaile swig tstools dvbsnoop ranger markdown mutt offlineimap msmtp libnotify-bin gcc-multilib g++-multilib gcc-4.4-multilib g++-4.4-multilib zlib1g zlib1g-dev lib32z1-dev zip gperf flex curl tofrodos lib32ncurses5-dev libglib2.0-0:i386 libpng12-0:i386 libsm6:i386 libxrender1:i386 libfontconfig1:i386 glances nautilus-actions rake ruby1.9.3 ruby-switch xclip xsel libjpeg62 r-base
 ```
 
 ~~apt-get install nautilus-open-terminal~~
@@ -344,7 +344,9 @@ wps：http://community.wps.cn/download/
     sudo apt-get remove gnome-shell-extensions
     ```
 
-    https://extensions.gnome.org 搜索安装Auto Move Windows扩展、SystemMonitor扩展、Weather扩展、Alternative Status Menu扩展
+    *注：当前testing源内的Auto Move Windows扩展有问题，使用官方最新的扩展*
+
+    https://extensions.gnome.org 搜索安装Advanced Settings in UserMenu扩展、Alternative Status Menu扩展、Auto Move Windows扩展、Coverflow Alt-Tab扩展、Places Status Indicator扩展、Removable Drive Menu扩展、Remove Accessibility扩展、SystemMonitor扩展、Weather扩展
     
     ```
     gnome-tweak-tool
@@ -352,8 +354,6 @@ wps：http://community.wps.cn/download/
 
     alt+f2，r
     Shell->Show date in clock
-    Shell扩展->Auto Move Windows扩展、SystemMonitor扩展、Weather扩展、Alternative Status Menu扩展开启
-    *注：当前testing源内的Auto Move Windows扩展有问题，使用官方最新的扩展*
 
   * gnome-shell插件设置
 
@@ -381,11 +381,4 @@ wps：http://community.wps.cn/download/
     sudo gem install github-pages
     jekyll serve
     ```
-
-
-
-
-
-
-
 
