@@ -12,37 +12,44 @@ tags: [Debian, Linux]
 
 ``` 
 # stable
-deb http://mirror.bjtu.edu.cn/debian/ stable main non-free contrib
-deb-src http://mirror.bjtu.edu.cn/debian/ stable main non-free contrib
+deb http://mirrors.163.com/debian/ stable main non-free contrib
+deb-src http://mirrors.163.com/debian/ stable main non-free contrib
 
-# stable-security
-deb http://mirror.bjtu.edu.cn/debian-security stable/updates main non-free contrib
-deb-src http://mirror.bjtu.edu.cn/debian-security stable/updates main non-free contrib
+# security
+deb http://mirrors.163.com/debian-security stable/updates main non-free contrib
+deb-src http://mirrors.163.com/debian-security stable/updates main non-free contrib
 
-# stable-updates
-deb http://mirror.bjtu.edu.cn/debian/ stable-updates main contrib non-free
-deb-src http://mirror.bjtu.edu.cn/debian/ stable-updates main contrib non-free
+# stable-updates, previously known as 'volatile'
+deb http://mirrors.163.com/debian/ stable-updates main contrib non-free
+deb-src http://mirrors.163.com/debian/ stable-updates main contrib non-free
 
 # backports
-# deb http://mirror.bjtu.edu.cn/debian/ stable-backports main contrib non-free
-# deb-src http://mirror.bjtu.edu.cn/debian/ stable-backports main contrib non-free
+# deb http://mirrors.163.com/debian/ stable-backports main contrib non-free
+# deb-src http://mirrors.163.com/debian/ stable-backports main contrib non-free
 
 # testing
-deb http://mirror.bjtu.edu.cn/debian testing main non-free contrib
-deb-src http://mirror.bjtu.edu.cn/debian testing main non-free contrib
+deb http://mirrors.163.com/debian testing main non-free contrib
+deb-src http://mirrors.163.com/debian testing main non-free contrib
 
 # testing-security
-deb http://mirror.bjtu.edu.cn/debian-security testing/updates main contrib non-free
-deb-src http://mirror.bjtu.edu.cn/debian-security testing/updates main contrib non-free
+deb http://mirrors.163.com/debian-security testing/updates main contrib non-free
+deb-src http://mirrors.163.com/debian-security testing/updates main contrib non-free
 
 # testing-proposed-updates
-deb http://mirror.bjtu.edu.cn/debian testing-proposed-updates main contrib non-free
-deb-src http://mirror.bjtu.edu.cn/debian testing-proposed-updates main contrib non-free
+deb http://mirrors.163.com/debian testing-proposed-updates main contrib non-free
+deb-src http://mirrors.163.com/debian testing-proposed-updates main contrib non-free
 ```
 
 *注：*
 *1. testing源和backports源没必要同时使用。*
 *2. 163等源存在更新不及时现象。*
+*3. 可用如下命令找出最适合的源：*
+
+```
+apt-spy update
+apt-spy -d testing -a asia -t 10
+```
+
 
 ### 开启混合模式
 
@@ -67,7 +74,7 @@ apt-get dist-upgrade
 ### 安装软件
 
 ```
-apt-get install python-openssl python-pip python-scrapy python-flask python-m2crypto python-gdata python-iso8601 python-autopep8 ipython libnss3-tools python-vte bison apt-transport-https libxml2-utils xsltproc htop strace ltrace xtrace build-essential libtool valgrind dkms gcc g++ make automake cmake openjdk-6-jdk android-tools-adb android-tools-fastboot subversion git git-email git-flow gitk tig ctags cscope vim vim-gnome ack-grep zsh tmux autojump tftp samba tftpd nfs-kernel-server sshfs rsync minicom rabbitvcs-nautilus chromium chromium-l10n icedove icedove-l10n-zh-cn wireshark tcpdump tcptrace tcptrack iptraf udpcast iperf mtr-tiny socat gdb meld flashplugin-nonfree icedtea-6-plugin ntpdate uboot-mkimage exaile swig tstools dvbsnoop ranger markdown mutt offlineimap msmtp libnotify-bin gcc-multilib g++-multilib gcc-4.4-multilib g++-4.4-multilib zlib1g zlib1g-dev lib32z1-dev zip gperf flex curl tofrodos lib32ncurses5-dev libglib2.0-0:i386 libpng12-0:i386 libsm6:i386 libxrender1:i386 libfontconfig1:i386 glances nautilus-actions rake ruby1.9.3 ruby-switch xclip xsel libjpeg62 r-base
+apt-get install python-openssl python-pip python-scrapy python-flask python-m2crypto python-gdata python-iso8601 python-autopep8 ipython libnss3-tools python-vte bison apt-transport-https libxml2-utils xsltproc htop strace ltrace xtrace build-essential libtool valgrind dkms gcc g++ make automake cmake openjdk-6-jdk android-tools-adb android-tools-fastboot subversion git git-email git-flow gitk tig ctags cscope vim vim-gnome ack-grep zsh tmux autojump tftp samba tftpd nfs-kernel-server sshfs rsync minicom rabbitvcs-nautilus chromium chromium-l10n icedove icedove-l10n-zh-cn wireshark tcpdump tcptrace tcptrack iptraf udpcast iperf mtr-tiny socat gdb meld flashplugin-nonfree icedtea-6-plugin ntpdate uboot-mkimage exaile swig tstools dvbsnoop ranger markdown mutt offlineimap msmtp libnotify-bin gcc-multilib g++-multilib gcc-4.4-multilib g++-4.4-multilib zlib1g zlib1g-dev lib32z1-dev zip gperf flex curl tofrodos lib32ncurses5-dev libglib2.0-0:i386 libpng12-0:i386 libsm6:i386 libxrender1:i386 libfontconfig1:i386 glances nautilus-actions rake ruby1.9.3 ruby-switch xclip xsel libjpeg62
 ```
 
 ~~apt-get install nautilus-open-terminal~~
@@ -78,15 +85,15 @@ xunlei-lixian：https://github.com/iambus/xunlei-lixian
 dropbox：https://www.dropbox.com/install?os=lnx
 yunio：https://www.yunio.com/
 sogoupinyin：http://packages.linuxdeepin.com/deepin/pool/non-free/f/fcitx-sogoupinyin-release/ （需要更新testing源里的libc6、fcitx-bin等）
-gnome-shell-google-calendar：https://github.com/vintitres/gnome-shell-google-calendar
+~~gnome-shell-google-calendar：https://github.com/vintitres/gnome-shell-google-calendar~~
 ADT Bundle：https://developer.android.com/sdk/index.html
 virtualbox：https://www.virtualbox.org/wiki/Linux_Downloads
 wps：http://community.wps.cn/download/
 
 *注：*
-*1. icedove即debian重编译过的thunderbird*
-*2. vim的\*和+寄存器需要安装vim-gnome*
-*3. 部分在线flash视频无法用gnash播放，需要安装flashplugin-nonfree*
+_1. icedove即debian重编译过的thunderbird_
+_2. vim的\*和+寄存器需要安装vim-gnome_
+_3. 部分在线flash视频无法用gnash播放，需要安装flashplugin-nonfree_
 
 ### 配置
 #### root用户
@@ -380,5 +387,11 @@ wps：http://community.wps.cn/download/
     ```
     sudo gem install github-pages
     jekyll serve
+    ```
+
+  * gitignore
+
+    ```
+    sudo gem install gitignore
     ```
 
