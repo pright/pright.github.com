@@ -17,6 +17,11 @@ sed -i 's/JAVA_OPTS:--Xmx2048m/JAVA_OPTS:--Xmx4096m -Xms2048m/' OpenGrok
 ```
 * 创建/opt/opengrok/src目录并添加需建立索引的代码目录
 * 安装tomcat6（目前版本tomcat7不能直接支持，需要修改OPENGROK_TOMCAT_BASE）并开启服务
+* 修改tomcat6默认端口号
+
+```
+sed -i 's/<Connector port="8080"/<Connector port="8088"/' /etc/tomcat6/server.xml
+```
 * 部署OpenGrok
 
 ```

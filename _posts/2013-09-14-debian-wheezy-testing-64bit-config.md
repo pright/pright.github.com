@@ -244,7 +244,7 @@ _3. 部分在线flash视频无法用gnash播放，需要安装flashplugin-nonfre
   * 注掉grml-zsh-config的alias，防止和autojump冲突
 
     ```
-    sed -i 's/\^alias j=/#alias j=/' ~/.zshrc
+    sed -i 's/^alias j=/#alias j=/' ~/.zshrc
     ```
 
   * 打开autojump
