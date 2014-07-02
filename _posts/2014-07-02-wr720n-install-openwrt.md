@@ -22,11 +22,11 @@ telnet 192.168.1.1
 ```
 config interface 'lan'
         option ifname 'eth1'
-        option force_link '1'
         option type 'bridge'
         option proto 'static'
         option ipaddr '192.168.0.1'
         option netmask '255.255.255.0'
+        option ip6assign '60'
 
 config interface 'wan'
         option ifname 'eth0'
@@ -34,7 +34,7 @@ config interface 'wan'
         option ipaddr '192.168.1.180'
         option netmask '255.255.255.0'
         option gateway '192.168.1.1'
-        option dns '192.168.1.1'
+        option dns '192.168.1.1 8.8.4.4'
 ```
 
 * 设置密码（OpenWrt将关闭telnet服务，以后只能通过ssh登录）
@@ -64,7 +64,7 @@ opkg update
 * 安装luci管理界面并开启
 
 ```
-opkg install luci
+opkg install luci luci-i18n-chinese
 /etc/init.d/uhttpd enable
 /etc/init.d/uhttpd start
 ```
