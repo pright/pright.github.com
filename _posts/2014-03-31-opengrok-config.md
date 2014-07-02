@@ -16,6 +16,7 @@ sed -i 's/OPENGROK_INSTANCE_BASE:-\/var\/opengrok/OPENGROK_INSTANCE_BASE:-\/opt\
 sed -i 's/JAVA_OPTS:--Xmx2048m/JAVA_OPTS:--Xmx4096m -Xms2048m/' OpenGrok
 ```
 * 创建/opt/opengrok/src目录并添加需建立索引的代码目录
+* 解压/opt/opengrok/lib/source.jar，修改WEB-INF目录下的web.xml文件中的CONFIGURATION参数为`/opt/opengrok/etc/configuration.xml`，然后再次压缩回source.jar
 * 安装tomcat6（目前版本tomcat7不能直接支持，需要修改OPENGROK_TOMCAT_BASE）并开启服务
 * 修改tomcat6默认端口号（因同时开启了占用8080端口的jenkins服务）
 
