@@ -18,21 +18,18 @@ packer -S debootstrap schroot
 #### debootstrap安装ubuntu
 
 ```
-sudo debootstrap --arch=i386 lucid /chroot/ubuntu-10.04 http://ubuntu.srt.cn/ubuntu/
+sudo debootstrap --arch=i386 lucid /chroot/ubuntu-10.04 http://mirrors.163.com/ubuntu/
+sudo debootstrap --arch=amd64 lucid /chroot/ubuntu-10.04 http://mirrors.163.com/ubuntu/
 ```
 
 #### 修改schroot配置
-**_/etc/schroot/setup.d/15binfmt_** ^([1])
-31行
+~~**_/etc/schroot/setup.d/15binfmt_** ^([1])~~
+~~31行~~
 
-```
-elif ! which update-binfmts > /dev/null; then
-```
-修改为
+~~elif ! which update-binfmts > /dev/null; then~~
+~~修改为~~
 
-```
-elif ! which update-binfmts &> /dev/null; then
-```
+~~elif ! which update-binfmts &> /dev/null; then~~
 
 **_/etc/schroot/default/nssdatabases_**
 
@@ -72,7 +69,7 @@ aliases=lucid,default
 #### schroot进入ubuntu
 
 ```
-schroot -c lucid -u root /bin/bash
+schroot -c lucid -u root -s /bin/bash
 ```
 
 ---
@@ -96,40 +93,63 @@ groupmod -g 94 floppy
 groupadd -g 93 optical
 groupadd -g 95 storage
 groupadd -g 98 power
-groupmod -g 11 uucp
+groupmod -g 14 uucp
 groupadd -g 10 wheel
+groupadd -g 90 network
+groupadd -g 96 scanner
+groupadd -g 998 bumblebee
 adduser pright
 usermod -G lp,wheel,video,audio,optical,floppy,storage,power pright
+```
+
+#### Oracle官网下载JDK 1.6
+放置于/opt/java6目录
+
+#### 配置JDK路径
+**_/etc/profile.d/jdk6.sh_**
+
+```
+export J2SDKDIR=/opt/java6
+export PATH=$PATH:/opt/java6/bin:/opt/java6/db/bin
+export JAVA_HOME=/opt/java6
+export DERBY_HOME=/opt/java6/db
+```
+
+**_/etc/profile.d/jre6.sh_**
+
+```
+export PATH=$PATH:/opt/java6/jre/bin
+export JAVA_HOME=${JAVA_HOME:-/opt/java6/jre}
 ```
 
 #### 添加10.04源
 **_/etc/apt/sources.list_**
 
-* 10.04已经移除sun jdk，使用8.04源里的安装 ^([6])
+~~* 10.04已经移除sun jdk，使用8.04源里的安装 ^([6])~~
 
 ```
-deb http://ubuntu.srt.cn/ubuntu/ lucid main restricted universe multiverse
-deb http://ubuntu.srt.cn/ubuntu/ lucid-security main restricted universe multiverse
-deb http://ubuntu.srt.cn/ubuntu/ lucid-updates main restricted universe multiverse
-deb http://ubuntu.srt.cn/ubuntu/ lucid-proposed main restricted universe multiverse
-deb http://ubuntu.srt.cn/ubuntu/ lucid-backports main restricted universe multiverse
-deb-src http://ubuntu.srt.cn/ubuntu/ lucid main restricted universe multiverse
-deb-src http://ubuntu.srt.cn/ubuntu/ lucid-security main restricted universe multiverse
-deb-src http://ubuntu.srt.cn/ubuntu/ lucid-updates main restricted universe multiverse
-deb-src http://ubuntu.srt.cn/ubuntu/ lucid-proposed main restricted universe multiverse
-deb-src http://ubuntu.srt.cn/ubuntu/ lucid-backports main restricted universe multiverse
-# sun-java6-jdk
-deb http://archive.ubuntu.com/ubuntu hardy-updates main multiverse
-deb http://archive.ubuntu.com/ubuntu hardy main multiverse
+deb http://mirrors.163.com/ubuntu/ lucid main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ lucid-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ lucid-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ lucid-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ lucid-backports main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ lucid main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ lucid-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ lucid-updates main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ lucid-proposed main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ lucid-backports main restricted universe multiverse
 ```
+~~# sun-java6-jdk~~
+~~deb http://archive.ubuntu.com/ubuntu hardy-updates main multiverse~~
+~~deb http://archive.ubuntu.com/ubuntu hardy main multiverse~~
 
 #### 更新安装软件
 
 ```
 apt-get update
 apt-get upgrade
-apt-get install man vim git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev libncurses5-dev x11proto-core-dev libx11-dev libgl1-mesa-dev tofrodos sun-java6-jdk uboot-mkimage
-apt-get install distcc ctags cscope tmux
+apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown libxml2-utils xsltproc python uboot-mkimage lzma
+apt-get install vim
 ```
 
 
