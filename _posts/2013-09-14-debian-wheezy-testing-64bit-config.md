@@ -74,7 +74,7 @@ apt-get dist-upgrade
 ### 安装软件
 
 ```
-apt-get install python-openssl python-pip python-scrapy python-flask python-m2crypto python-gdata python-iso8601 python-autopep8 ipython libnss3-tools python-vte bison apt-transport-https libxml2-utils xsltproc htop strace ltrace xtrace build-essential libtool valgrind dkms gcc g++ make automake cmake openjdk-6-jdk android-tools-adb android-tools-fastboot subversion git git-email git-flow gitk tig ctags cscope vim vim-gnome ack-grep zsh tmux autojump tftp samba tftpd nfs-kernel-server sshfs rsync minicom rabbitvcs-nautilus chromium chromium-l10n icedove icedove-l10n-zh-cn wireshark tcpdump tcptrace tcptrack iptraf udpcast iperf mtr-tiny socat gdb meld flashplugin-nonfree icedtea-6-plugin ntpdate uboot-mkimage exaile swig tstools dvbsnoop ranger markdown mutt offlineimap msmtp libnotify-bin gcc-multilib g++-multilib gcc-4.4-multilib g++-4.4-multilib zlib1g zlib1g-dev lib32z1-dev zip gperf flex curl tofrodos lib32ncurses5-dev libglib2.0-0:i386 libpng12-0:i386 libsm6:i386 libxrender1:i386 libfontconfig1:i386 glances nautilus-actions rake ruby1.9.3 ruby-switch xclip xsel libjpeg62
+apt-get install python-openssl python-pip python-scrapy python-flask python-m2crypto python-gdata python-iso8601 python-autopep8 ipython libnss3-tools python-vte bison apt-transport-https libxml2-utils xsltproc htop strace ltrace xtrace build-essential libtool valgrind dkms gcc g++ make automake cmake openjdk-6-jdk android-tools-adb android-tools-fastboot subversion git git-email git-flow gitk tig ctags cscope vim vim-gnome ack-grep zsh tmux autojump tftp samba tftpd nfs-kernel-server sshfs rsync minicom rabbitvcs-nautilus chromium-browser chromium-browser-l10n icedove icedove-l10n-zh-cn wireshark tcpdump tcptrace tcptrack iptraf udpcast iperf mtr-tiny socat gdb meld pepperflashplugin-nonfree icedtea-6-plugin ntpdate uboot-mkimage exaile swig tstools dvbsnoop ranger markdown mutt offlineimap msmtp libnotify-bin gcc-multilib g++-multilib gcc-4.4-multilib g++-4.4-multilib zlib1g zlib1g-dev lib32z1-dev zip gperf flex curl tofrodos lib32ncurses5-dev libglib2.0-0:i386 libpng12-0:i386 libsm6:i386 libxrender1:i386 libfontconfig1:i386 glances nautilus-actions rake ruby1.9.3 ruby-switch xclip xsel libjpeg62
 ```
 
 ~~apt-get install nautilus-open-terminal~~
@@ -93,7 +93,7 @@ wps：http://community.wps.cn/download/
 *注：*
 _1. icedove即debian重编译过的thunderbird_
 _2. vim的\*和+寄存器需要安装vim-gnome_
-_3. 部分在线flash视频无法用gnash播放，需要安装flashplugin-nonfree_
+_3. 部分在线flash视频无法用gnash播放，需要安装~~flashplugin-nonfree~~pepperflashplugin-nonfree_
 
 ### 配置
 #### root用户
@@ -198,8 +198,9 @@ _3. 部分在线flash视频无法用gnash播放，需要安装flashplugin-nonfre
     \# gcc/g++
 
     ```
-    ln -sf /usr/bin/gcc-4.4 gcc
-    ln -sf /usr/bin/g++-4.4 g++
+    ln -sf /usr/bin/gcc-4.4 /usr/bin/gcc
+    ln -sf /usr/bin/g++-4.4 /usr/bin/g++
+    apt-get install make:amd64=3.81-8.2
     ```
     
     \# Workaround for now
